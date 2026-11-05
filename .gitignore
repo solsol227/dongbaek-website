@@ -50,3 +50,4 @@ next-env.d.ts
 
 # local environment files
 *.env
+.env.local
