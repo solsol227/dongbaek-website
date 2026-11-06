@@ -60,7 +60,8 @@
 .experienceCard { display: grid; isolation: isolate; overflow: hidden; }
 .experienceCard > img { grid-area: 1 / 1; }
 .experienceCard > img { height: 100%; min-height: 340px; object-fit: cover; }
-.experienceCard .cardCopy { grid-area: 1 / 1; align-self: end; z-index: 1; padding: 80px 24px 24px; background: linear-gradient(0deg, rgb(5 15 8 / 94%), rgb(5 15 8 / 65%) 60%, transparent); }
+.experienceCard .cardCopy { grid-area: 1 / 1; align-self: end; z-index: 1; padding: 48px 24px 24px; background: linear-gradient(0deg, rgb(5 15 8 / 94%), rgb(5 15 8 / 65%) 60%, transparent); }
+.experienceCard .cardCopy h3 { margin: 0 0 8px; }
 .cardCopy h3 { margin: 0 0 8px; color: #fff; font-size: clamp(18px, 2vw, 24px); }
 .experienceCard .cardCopy p { margin: 0; color: #fff; font-size: 14px; line-height: 1.7; }
 .shortFilms figure { position: relative; }
@@ -74,7 +75,7 @@
   .goodsPanel { min-height: 400px; }
   .visitPanel { min-height: 700px; margin-bottom: 0; }
   .experienceCard > img { min-height: 360px; }
-  .experienceCard .cardCopy { padding: 72px 20px 22px; }
+  .experienceCard .cardCopy { padding: 28px 20px 22px; }
   .cardNewsPanel { min-height: 300px; }
 }
 .keyVisual { display: block; width: 100%; height: auto; margin-top: 40px; }
@@ -171,6 +172,7 @@
 .notification .sectionHeading { margin: 0; }
 .sectionHeading .notificationMessage { margin-top: 52px; font-size: clamp(28px, 3.5vw, 48px); font-weight: 600; line-height: 1.35; color: #171717; letter-spacing: -.045em; }
 .notificationForm { min-width: 0; }
+.notificationField + .notificationField { margin-top: 20px; }
 .previewNote { margin: 0 0 26px; padding: 18px; background: #fff; line-height: 1.7; font-size: 14px; font-weight: 600; }
 .fieldLabel { display: block; font-weight: 650; font-size: 15px; margin-bottom: 10px; }
 .fieldLabel span { font-weight: 400; }

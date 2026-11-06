@@ -13,6 +13,10 @@
 # testing
 /coverage
 
+# Local previews and generated working files
+/tmp/
+/output/
+
 # next.js
 /.next/
 /out/

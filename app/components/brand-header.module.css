@@ -5,7 +5,6 @@
 .logo { display: block; width: 100%; height: auto; }
 .sections { display: flex; justify-content: center; gap: clamp(18px, 2.7vw, 43px); }
 .sections a { white-space: nowrap; font-size: 15px; font-weight: 600; padding-block: 12px; text-decoration: none; }
-.sections a:hover { text-decoration: underline; text-underline-offset: 7px; text-decoration-color: #e6738b; }
 .account { display: flex; justify-content: flex-end; align-items: center; gap: 14px; font-size: 12px; }
 .account a { white-space: nowrap; text-decoration: none; }
 .account a:hover { text-decoration: underline; text-underline-offset: 4px; }

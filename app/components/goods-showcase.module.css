@@ -1,0 +1,56 @@
+/* Preserve the existing brand: variance 6 / motion 2 / density 3.
+   Native dialog uses the browser top layer above the sticky navigation. */
+.showcase { margin-top: 32px; }
+.scene { position: relative; }
+.collection { display: block; width: 100%; height: auto; }
+.hotspot { position: absolute; left: var(--x); top: var(--y); width: var(--w); height: var(--h); transform: translate(-50%, -50%); min-width: 44px; min-height: 44px; display: flex; align-items: flex-end; justify-content: center; border: 0; padding: 0; background: transparent; cursor: pointer; color: #171717; }
+.pin { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; border: 1px solid #fff; background: #fff8f0; box-shadow: 0 2px 10px rgb(55 36 24 / 18%); font-size: 25px; font-weight: 400; line-height: 1; transition: background .15s, transform .15s; }
+.hotspot:hover .pin, .hotspot:focus-visible .pin { background: #ffa7b7; transform: scale(1.1); }
+.hotspot:active .pin { transform: scale(.95); }
+.hotspot:focus-visible { outline: 2px solid #171717; outline-offset: 3px; }
+.tooltip { position: absolute; bottom: 44px; padding: 6px 10px; background: #fff8f0; color: #171717; font-size: 13px; font-weight: 600; white-space: nowrap; opacity: 0; pointer-events: none; }
+.hotspot:hover .tooltip, .hotspot:focus-visible .tooltip { opacity: 1; }
+.hint { margin: 18px 0; color: #45483f; font-size: 14px; text-align: center; }
+.dialog { width: min(900px, calc(100% - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 0; background: #fff8f0; color: #171717; overflow: auto; overscroll-behavior: contain; }
+.dialog::backdrop { background: rgb(20 25 20 / 65%); }
+.dialogContent { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+.dialogHeader { position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 68px; padding: 12px 24px; background: #fff8f0; border-bottom: 1px solid #e7ded3; }
+.close { min-height: 44px; padding: 8px 12px; display: flex; align-items: center; gap: 12px; border: 1px solid #c8c0b5; background: #fff8f0; color: #171717; font-size: 13px; cursor: pointer; }
+.close span { font-size: 24px; line-height: 1; }
+.close:hover { background: #ffa7b7; }
+.gallery { min-width: 0; padding: 24px; background: #fff; display: flex; flex-direction: column; justify-content: center; }
+.photoOptions { display: flex; gap: 16px; margin-bottom: 16px; }
+.photoOptions button { min-height: 44px; padding: 8px 0; border: 0; border-bottom: 2px solid transparent; background: transparent; color: #60635b; font-size: 13px; cursor: pointer; }
+.photoOptions button[aria-pressed="true"] { border-color: #171717; color: #171717; font-weight: 700; }
+.productImage { position: relative; height: 360px; display: grid; place-items: center; min-width: 0; overflow: hidden; background: #fff; }
+.turntable { position: relative; display: grid; place-items: center; width: 100%; height: 100%; touch-action: pan-y; user-select: none; cursor: grab; }
+.turntable:active { cursor: grabbing; }
+.turntable:focus-visible { outline: 2px solid #171717; outline-offset: -3px; }
+.turnFrame { position: relative; width: 100%; aspect-ratio: 3 / 2; overflow: hidden; pointer-events: none; }
+.turnFrame img { position: absolute; display: block; width: 200%; max-width: none; height: 200%; object-fit: fill; }
+.lifestyleImage { display: block; width: 100%; height: 100%; object-fit: contain; }
+.imageStatus { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; padding: 24px; color: #60635b; font-size: 13px; text-align: center; }
+.dragCue { position: absolute; bottom: 20px; left: 50%; display: flex; align-items: center; gap: 10px; transform: translateX(-50%); padding: 8px 14px; border: 1px solid #ddd3c8; border-radius: 999px; background: rgb(255 248 240 / 95%); color: #171717; font-size: 12px; white-space: nowrap; pointer-events: none; }
+.dragGesture { display: inline-block; font-size: 26px; line-height: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .dragGesture { animation: dragGesture 1.7s ease-in-out 3; }
+}
+@keyframes dragGesture { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.mediaHint { min-height: 20px; margin: 16px 0 0; color: #60635b; font-size: 12px; line-height: 1.6; text-align: center; }
+.copy { padding: 40px 36px; }
+.brand { margin: 0; font-size: 12px; font-weight: 650; letter-spacing: .08em; }
+.copy h3 { margin: 0 0 24px; font-size: clamp(23px, 2.5vw, 30px); line-height: 1.35; word-break: keep-all; }
+.copy > p:not(.brand) { margin: 0 0 16px; font-size: 15px; line-height: 1.85; word-break: keep-all; }
+.copy > .note { margin-top: 28px !important; padding-top: 20px; border-top: 1px solid #d6cfc4; color: #60635b; font-size: 12px !important; }
+@media (max-width: 767px) {
+  .showcase { margin-top: 24px; }
+  .pin { width: 28px; height: 28px; font-size: 22px; }
+  .tooltip { display: none; }
+  .hint { font-size: 12px; line-height: 1.7; }
+  .dialogContent { grid-template-columns: 1fr; }
+  .dialogHeader { padding-inline: 20px; }
+  .gallery { padding: 20px; }
+  .productImage { height: 260px; }
+  .copy { padding: 28px 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .pin { transition: none; } }

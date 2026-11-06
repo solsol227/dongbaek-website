@@ -1,21 +1,11 @@
 import Image from "next/image";
 import GoodsCarousel from "./components/GoodsCarousel";
+import GoodsShowcase from "./components/GoodsShowcase";
 import HeroVideo from "./components/HeroVideo";
 import NotificationPreview from "./components/NotificationPreview";
 import PhotoPanel from "./components/PhotoPanel";
 import CardNewsCarousel from "./components/CardNewsCarousel";
 import styles from "./page.module.css";
-
-const goods = [
-  { name: "동백마을 산책 모자", description: "산책길에 함께하는 bLOOM", images: ["hat"] },
-  { name: "동백꽃과 씨앗 파우치", description: "작은 소지품에 담는 마을의 이야기", images: ["pouch"] },
-  { name: "동백마을 산책 텀블러", description: "일상에 함께하는 동백마을 모티브", images: ["bottle"] },
-  { name: "동백꽃 블룸이 키링", description: "가방 끝에 함께하는 블룸이", images: ["keyring"] },
-  { name: "동백마을 모티브 스티커", description: "좋아하는 곳에 남기는 동백마을", images: ["stickers"] },
-  { name: "동백마을 모티브 마스킹테이프", description: "기록 사이에 피어나는 동백꽃", images: ["tape"] },
-  { name: "동백오일 향기 반지", description: "동백오일의 이야기를 담은 반지", images: ["ring"] },
-  { name: "동백오일 패키지", description: "블랙 · 아이보리 · 핑크 이미지 미리보기", images: ["oil-black", "oil-ivory", "oil-pink"] },
-];
 
 export default function Home() {
   return (
@@ -82,7 +72,7 @@ export default function Home() {
                 ["mist", "동백 화장수", "동백과 함께하는 나만의 일상"],
               ].map(([image, title, description]) => (
                 <li key={image} className={styles.experienceCard}>
-                  <Image className={styles.editorialImage} src={`/brand/final/experience-${image}.webp`} alt={`${title} 체험을 블룸이와 함께하는 소개 이미지`} width={1536} height={1024} sizes="(max-width: 767px) 80vw, 45vw" />
+                  <Image className={styles.editorialImage} src={`/brand/final/experience-${image}-v3.webp`} alt={`${title} 만들기에 집중하는 참가자와 블룸이`} width={1536} height={1024} sizes="(max-width: 767px) 80vw, 45vw" />
                   <div className={styles.cardCopy}><h3>{title}</h3><p>{description}</p></div>
                 </li>
               ))}
@@ -92,20 +82,11 @@ export default function Home() {
 
         <section id="goods" className={`${styles.section} ${styles.ivory}`} aria-labelledby="goods-title">
           <div className={styles.sectionInner}>
-            <GoodsCarousel label="콜라보 굿즈 8종, 제품별 PNG 이미지 10장" header={<header className={styles.sectionHeading}>
+            <header className={styles.sectionHeading}>
               <h2 id="goods-title">콜라보 굿즈</h2>
               <p>일상에서도, 너의 방식대로.</p>
-              <p className={styles.smallNote}>제공된 제품 이미지 미리보기입니다. 출시 일정·가격·판매 정보는 준비 중입니다.</p>
-            </header>}>
-              {goods.flatMap((item) => item.images.map((image, index) => (
-                <li key={image} className={styles.product}>
-                  <div className={styles.productVisual}>
-                    <Image src={`/brand/goods/${image}.png`} alt={item.images.length > 1 ? `${item.name} ${["블랙", "아이보리", "핑크"][index]}` : item.name} width={image === "bottle" ? 1024 : image === "keyring" ? 1262 : 1536} height={image === "bottle" ? 1536 : image === "keyring" ? 1246 : 1024} sizes="(max-width: 767px) 80vw, (max-width: 1023px) 45vw, 30vw" />
-                  </div>
-                  <div className={styles.cardCopy}><h3>{item.name}{item.images.length > 1 ? ` ${["블랙", "아이보리", "핑크"][index]}` : ""}</h3><p>{item.images.length > 1 ? "동백오일 패키지 컬러 미리보기" : item.description}</p></div>
-                </li>
-              )))}
-            </GoodsCarousel>
+            </header>
+            <GoodsShowcase />
           </div>
         </section>
 
