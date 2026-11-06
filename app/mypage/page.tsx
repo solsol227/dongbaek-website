@@ -5,7 +5,7 @@ import { createClient } from "@/utils/supabase/server";
 import ProfileForm from "./ProfileForm";
 import styles from "@/app/components/account.module.css";
 
-export const metadata: Metadata = { title: "마이페이지 | Chats" };
+export const metadata: Metadata = { title: "마이페이지 | bLOOM" };
 
 async function Profile() {
   const supabase = await createClient();

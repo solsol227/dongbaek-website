@@ -1,2 +1,0 @@
-.preview { flex: 1; display: grid; place-items: center; min-height: calc(100dvh - 64px); background: #f8f9fe; }
-.preview .chatScreen { height: min(812px, calc(100dvh - 64px)); }

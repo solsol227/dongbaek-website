@@ -1,0 +1,26 @@
+/* Layer 20: persistent site navigation; layer 30: keyboard skip link. */
+.header { position: sticky; top: 0; z-index: 20; flex-shrink: 0; background: #fff; border-bottom: 1px solid #e9e9e4; }
+.inner { max-width: 1600px; min-height: 80px; padding: 12px 4%; margin: auto; display: grid; grid-template-columns: 155px 1fr auto; gap: 32px; align-items: center; }
+.brand { display: block; width: 145px; }
+.logo { display: block; width: 100%; height: auto; }
+.sections { display: flex; justify-content: center; gap: clamp(18px, 2.7vw, 43px); }
+.sections a { white-space: nowrap; font-size: 15px; font-weight: 600; padding-block: 12px; text-decoration: none; }
+.sections a:hover { text-decoration: underline; text-underline-offset: 7px; text-decoration-color: #e6738b; }
+.account { display: flex; justify-content: flex-end; align-items: center; gap: 14px; font-size: 12px; }
+.account a { white-space: nowrap; text-decoration: none; }
+.account a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.account button { color: #171717; }
+.loading { color: #60635b; }
+@media (max-width: 1100px) {
+  .inner { grid-template-columns: 125px 1fr; gap: 8px 20px; padding: 14px 24px 0; }
+  .brand { width: 120px; }
+  .account { grid-column: 2; grid-row: 1; }
+  .sections { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; gap: 16px; }
+  .sections a { font-size: 14px; padding-block: 14px; }
+}
+@media (max-width: 480px) {
+  .inner { padding-inline: 16px; }
+  .sections { gap: 6px; }
+  .sections a { font-size: 12px; }
+  .account { gap: 10px; font-size: 11px; }
+}
