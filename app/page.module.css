@@ -5,7 +5,7 @@
 .storiesColumns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); margin-top: 40px; }
 .storiesColumn { min-width: 0; }
 .storiesColumn h3 { margin: 0 0 24px; color: #fff; font-size: 24px; font-weight: 650; }
-.shortformSlot { display: grid; place-items: center; aspect-ratio: 9 / 16; width: min(100%, 340px); margin-inline: auto; border: 1px dashed rgb(255 255 255 / 45%); background: rgb(5 15 8 / 28%); color: rgb(255 255 255 / 75%); font-size: 14px; }
+.shortformSlot { display: block; aspect-ratio: 9 / 16; width: min(100%, 340px); height: auto; margin-inline: auto; object-fit: contain; background: #050f08; }
 .cardNewsViewer { min-width: 0; }
 .cardNewsStage { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 8px; align-items: center; }
 .cardNewsImage { display: block; min-width: 0; }
@@ -282,4 +282,26 @@
   .footerLogo { width: 150px; }
   .footer > p { font-size: 16px; }
   .footerDetails { margin-top: 10px; }
+}
+
+/* Keep form fields readable between tablet and narrow phone widths. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .notificationContent { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .notificationPanel .notificationForm { max-width: 560px; width: 100%; }
+}
+@media (max-width: 480px) {
+  .carouselHeading { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .carouselHeading .sectionHeading h2 { grid-column: 1; grid-row: auto; }
+  .carouselHeading .carouselControls { grid-column: 1; grid-row: auto; }
+  .carouselHeading .carouselControls button { min-width: 44px; }
+  .notificationPanel .photoCopy { padding: 24px 16px; }
+  .notificationPanel .notificationForm { padding: 16px 12px; }
+  .notificationPanel .previewNote { padding: 12px; }
+  .photoCopy .sectionHeading .notificationMessage { font-size: 28px; }
+  .submitButton { white-space: normal; }
+  .cardNewsStage { grid-template-columns: 44px minmax(0, 1fr) 44px; }
+  .cardNewsImage { grid-column: 1 / -1; grid-row: 1; }
+  .cardNewsStage > button { grid-row: 2; margin-top: 8px; }
+  .cardNewsStage > button:last-child { grid-column: 3; }
+  .productVisual { padding: 16px; }
 }

@@ -134,7 +134,16 @@ export default function Home() {
             <div className={styles.storiesColumns}>
               <div className={styles.storiesColumn}>
                 <h3>숏폼</h3>
-                <div className={styles.shortformSlot} role="img" aria-label="숏폼 영상 한 편을 위한 빈 자리. 준비 중입니다."><span>준비 중</span></div>
+                <video
+                  className={styles.shortformSlot}
+                  controls playsInline preload="metadata"
+                  poster="/brand/final/short-combined-poster.webp"
+                  width={360} height={640}
+                  aria-label="동백마을 숏폼 영상 — 1편과 2편 이어보기"
+                >
+                  <source src="/brand/final/short-combined.mp4" type="video/mp4" />
+                  <a href="/brand/final/short-combined.mp4">숏폼 영상 직접 보기</a>
+                </video>
               </div>
               <div className={styles.storiesColumn}>
                 <h3 id="card-news-title">카드뉴스</h3>

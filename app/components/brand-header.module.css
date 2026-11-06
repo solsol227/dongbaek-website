@@ -19,8 +19,11 @@
   .sections a { font-size: 14px; padding-block: 14px; }
 }
 @media (max-width: 480px) {
-  .inner { padding-inline: 16px; }
+  .inner { padding-inline: 16px; grid-template-columns: 100px minmax(0, 1fr); column-gap: 12px; }
+  .brand { width: 100px; }
   .sections { gap: 6px; }
   .sections a { font-size: 12px; }
-  .account { gap: 10px; font-size: 11px; }
+  .account { min-width: 0; gap: 8px; font-size: 11px; }
+  .account > span { max-width: 48px; }
+  .account a { display: inline-flex; align-items: center; min-height: 44px; }
 }

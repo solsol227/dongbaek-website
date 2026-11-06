@@ -1,12 +1,24 @@
 "use client";
 
-import { useEffect, useState, type FocusEvent } from "react";
+import { useEffect, useState, useSyncExternalStore, type FocusEvent, type PointerEvent } from "react";
+
+const motionQuery = "(prefers-reduced-motion: reduce)";
+function subscribeMotion(change: () => void) {
+  const query = window.matchMedia(motionQuery);
+  query.addEventListener("change", change);
+  return () => query.removeEventListener("change", change);
+}
+const readMotion = () => window.matchMedia(motionQuery).matches;
+const serverMotion = () => true;
 
 export default function useAutoAdvance(advance: () => void, delay = 6000) {
   const [held, setHeld] = useState(false);
   const [keyboardFocused, setKeyboardFocused] = useState(false);
-  const [stopped, setStopped] = useState(false);
-  const paused = held || keyboardFocused || stopped;
+  const [hovered, setHovered] = useState(false);
+  const [manualStop, setManualStop] = useState<boolean | null>(null);
+  const reducedMotion = useSyncExternalStore(subscribeMotion, readMotion, serverMotion);
+  const stopped = manualStop ?? reducedMotion;
+  const paused = held || hovered || keyboardFocused || stopped;
 
   useEffect(() => {
     const release = () => setHeld(false);
@@ -31,8 +43,12 @@ export default function useAutoAdvance(advance: () => void, delay = 6000) {
   return {
     paused,
     stopped,
-    toggle: () => setStopped((previous) => !previous),
+    toggle: () => setManualStop(!stopped),
     bindings: {
+      onPointerEnter: (event: PointerEvent<HTMLElement>) => {
+        if (event.pointerType === "mouse") setHovered(true);
+      },
+      onPointerLeave: () => setHovered(false),
       onPointerDown: () => setHeld(true),
       onFocusCapture: (event: FocusEvent<HTMLElement>) => {
         if (event.target.matches(":focus-visible")) setKeyboardFocused(true);
