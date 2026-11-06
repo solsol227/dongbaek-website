@@ -32,6 +32,12 @@ export default function Home() {
             <p className={styles.brandMessage}>너의 방식대로 피어나.</p>
             <p className={styles.intro}>동백의 꽃과 씨앗, 오일의 이야기가<br className={styles.desktopBreak} /> 마을에서 일상으로 이어집니다.</p>
             <p className={styles.smallNote}>협업 상세 소식과 출시 일정은 준비 중입니다.</p>
+            <Image className={styles.keyVisual} src="/brand/final/key-visual.webp" alt="겨울 동백숲 돌담에서 만나는 블룸이와 bLOOM" width={1672} height={941} sizes="(max-width: 767px) 100vw, 90vw" />
+            <details className={styles.assetDetails}>
+              <summary>콜라보 포스터 보기</summary>
+              <p className={styles.smallNote}>브랜드 소개용 제작 이미지입니다. 이미지 속 일정·증정·판매 조건은 현재 확정된 운영 안내가 아닙니다.</p>
+              <a href="/brand/final/collaboration-poster.webp" target="_blank" rel="noopener noreferrer" aria-label="콜라보 포스터 크게 보기 (새 탭)"><Image className={styles.posterImage} src="/brand/final/collaboration-poster.webp" alt="BLOOM YOUR WAY 콜라보 포스터 시안" width={1024} height={1536} sizes="(max-width: 767px) 90vw, 480px" /></a>
+            </details>
           </div>
         </section>
 
@@ -43,13 +49,17 @@ export default function Home() {
             </header>
             <div className={styles.villageGrid}>
               <figure className={styles.villagePhoto}>
-                <Image src="/brand/village.jpg" alt="붉은 동백꽃과 초록 잎, 돌담이 어우러진 동백숲" width={1536} height={1024} sizes="(max-width: 767px) 100vw, 60vw" />
+                <Image src="/brand/final/village-forest.webp" alt="붉은 동백꽃과 초록 잎, 돌담이 어우러진 동백숲 산책길" width={1536} height={1024} sizes="(max-width: 767px) 100vw, 60vw" />
                 <figcaption>동백마을의 풍경</figcaption>
               </figure>
               <div className={styles.characterStory}>
                 <Image src="/brand/bloomi.png" alt="분홍 동백꽃과 초록 새싹을 머리에 얹은 캐릭터 블룸이" width={227} height={259} className={styles.character} />
                 <h3>안녕, 나는 블룸이.</h3>
                 <p>동백마을의 이야기를 함께 전하는 bLOOM의 캐릭터예요. 꽃에서 씨앗으로, 씨앗에서 오일로 이어지는 동백의 이야기를 만나보세요.</p>
+                <details className={styles.assetDetails}>
+                  <summary>블룸이의 여러 모습 보기</summary>
+                  <Image className={styles.editorialImage} src="/brand/final/bloomi-turnaround.webp" alt="앞·옆·뒤에서 바라본 블룸이의 다양한 모습" width={1536} height={1024} sizes="(max-width: 767px) 90vw, 35vw" />
+                </details>
               </div>
             </div>
           </div>
@@ -61,13 +71,19 @@ export default function Home() {
               <h2 id="experience-title">마을 체험 소개</h2>
               <p>동백마을을 만나는 또 하나의 방법</p>
             </header>
-            <div className={styles.experienceBody}>
-              <p className={styles.experienceMessage}>동백의 이야기를<br />마을에서 만나요.</p>
-              <div className={styles.pendingCopy}>
-                <span className={styles.comingSoon}>준비 중</span>
-                <p>실제 운영하는 마을 체험을 소개할 예정입니다. 체험 종류와 진행 방식, 운영 일정은 확인 후 안내할게요.</p>
-              </div>
+            <div className={styles.experienceCards}>
+              {[
+                ["pasta", "동백오일 파스타", "동백오일과 함께하는 식탁의 풍경"],
+                ["oil", "씨앗에서 오일로", "동백 씨앗과 오일의 이야기를 만나는 장면"],
+                ["mist", "동백 화장수", "동백과 함께하는 나만의 일상"],
+              ].map(([image, title, description]) => (
+                <article key={image}>
+                  <Image className={styles.editorialImage} src={`/brand/final/experience-${image}.webp`} alt={`${title} 체험을 블룸이와 함께하는 소개 이미지`} width={1536} height={1024} sizes="(max-width: 767px) 90vw, 30vw" />
+                  <h3>{title}</h3><p>{description}</p>
+                </article>
+              ))}
             </div>
+            <p className={styles.smallNote}>체험 소개용 제작 이미지입니다. 실제 운영 여부·진행 방식·일정·참여 조건은 확인 후 안내합니다.</p>
           </div>
         </section>
 
@@ -78,6 +94,18 @@ export default function Home() {
               <p>일상에서도, 너의 방식대로.</p>
               <p className={styles.smallNote}>제공된 제품 이미지 미리보기입니다. 출시 일정·가격·판매 정보는 준비 중입니다.</p>
             </header>
+            <div className={styles.goodsEditorial}>
+              <Image className={styles.editorialImage} src="/brand/final/goods-collection.webp" alt="모자·텀블러·키링·파우치·스티커·마스킹테이프 콜라보 굿즈 화보" width={1774} height={887} sizes="90vw" />
+              <details className={styles.assetDetails}>
+                <summary>오일 패키지와 아로마 링 자세히 보기</summary>
+                <p className={styles.smallNote}>제공된 디자인 시안입니다. 시안 속 제품 구분·증정·사용 안내는 확정 판매 조건이 아닙니다.</p>
+                <div className={styles.editorialGrid}>
+                  {[["goods-oil", "동백오일 패키지와 그래픽 디자인"], ["goods-ring", "아로마 링과 오일 패키지 디자인"], ["ring-design", "동백오일 향기 반지의 형태와 디자인"]].map(([image, alt]) => (
+                    <a key={image} href={`/brand/final/${image}.webp`} target="_blank" rel="noopener noreferrer" aria-label={`${alt} 크게 보기 (새 탭)`}><Image className={styles.editorialImage} src={`/brand/final/${image}.webp`} alt={alt} width={1536} height={1024} sizes="(max-width: 767px) 90vw, 45vw" /></a>
+                  ))}
+                </div>
+              </details>
+            </div>
             <GoodsCarousel>
               {goods.map((item) => (
                 <li key={item.name} className={styles.product}>
@@ -112,19 +140,29 @@ export default function Home() {
               <h2 id="stories-title">숏폼 · 카드뉴스</h2>
               <p>짧은 장면으로 만나는 bLOOM</p>
             </header>
-            <div className={styles.storiesGrid}>
-              <article className={styles.story}>
-                <h3>움직이는 마을 이야기</h3>
-                <p>숏폼 영상</p>
-                <span className={styles.comingSoon}>준비 중</span>
-                <p className={styles.smallNote}>새로운 영상이 준비되면 이곳에서 만날 수 있어요.</p>
-              </article>
-              <article className={styles.story}>
-                <h3>한 장씩 만나는 콜라보</h3>
-                <p>카드뉴스</p>
-                <span className={styles.comingSoon}>준비 중</span>
-                <p className={styles.smallNote}>브랜드와 굿즈 소식을 담은 카드를 준비하고 있어요.</p>
-              </article>
+            <h3 className={styles.contentTitle}>움직이는 마을 이야기</h3>
+            <div className={styles.shortFilms}>
+              {[1, 2].map((number) => (
+                <figure key={number}>
+                  <video controls playsInline preload="none" poster={`/brand/final/short-${number}-poster.webp`} width={941} height={1672} aria-label={`bLOOM 숏폼 영상 ${number}`}>
+                    <source src={`/brand/final/short-${number}.mp4`} type="video/mp4" />
+                    이 브라우저에서는 영상을 재생할 수 없습니다.
+                  </video>
+                  <figcaption>동백마을 × bLOOM · 숏폼 {number} <a href={`/brand/final/short-${number}.mp4`}>영상 직접 열기</a></figcaption>
+                </figure>
+              ))}
+            </div>
+            <h3 className={styles.contentTitle}>한 장씩 만나는 콜라보</h3>
+            <p className={styles.smallNote}>카드를 누르면 크게 볼 수 있어요. 브랜드 소개용 제작 콘텐츠이며, 이미지 속 체험·선물·이벤트 조건은 현재 확정된 운영 안내가 아닙니다.</p>
+            <div className={styles.cardNews}>
+              {["콜라보 이야기", "제주 동백마을", "마을 체험 이야기", "오일과 아로마 링", "모자와 파우치", "동백마을에서 만나요"].map((title, index) => (
+                <figure key={title}>
+                  <a href={`/brand/final/card-0${index + 1}.webp`} target="_blank" rel="noopener noreferrer" aria-label={`카드뉴스 ${index + 1}: ${title} 크게 보기 (새 탭)`}>
+                    <Image src={`/brand/final/card-0${index + 1}.webp`} alt={`카드뉴스 ${index + 1}: ${title}`} width={1122} height={1402} sizes="(max-width: 767px) 90vw, 30vw" />
+                  </a>
+                  <figcaption><span>0{index + 1}</span> {title}</figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>

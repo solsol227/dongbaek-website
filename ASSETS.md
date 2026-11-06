@@ -50,3 +50,38 @@
 - 제공된 `tmp/pdfs/brand-reference.jpg`의 디자인 가이드 발췌를 확인했다. 원본 로고 사용, 지정 색상, 자연 풍경의 색과 돌담 질감 유지 기준을 반영했다.
 - 본문 서체는 Pretendard, 배경은 화이트·웜 아이보리, 주요 강조색은 소프트 핑크·그린이다. 라임·시안도 토큰으로 준비했다.
 - 방문 정보, 숏폼·카드뉴스 원본, 확정 출시 정보는 아직 제공되지 않았다. 섹션 틀에는 준비 중을 표시한다.
+
+
+## 산출물최종정리 반영 (2026.11.06)
+
+원본 폴더: `../산출물최종정리/`. 원본은 그대로 두고 게시용 이미지를 WebP(품질 92)로 준비했다.
+
+| 원본 | 웹 경로 |
+| --- | --- |
+| AX관광_키비주얼_최종_20261106.png | /brand/final/key-visual.webp |
+| AX관광_콜라보포스터_굿즈체험정보와로고조화_20261103.png | /brand/final/collaboration-poster.webp |
+| 영상/제주 동백숲의 붉은 길.png | /brand/final/village-forest.webp |
+| 캐릭터/AX관광_캐릭터가이드_턴어라운드.png | /brand/final/bloomi-turnaround.webp |
+| AX관광_마을체험_동백오일파스타_20261106.png | /brand/final/experience-pasta.webp |
+| AX관광_마을체험_씨앗오일_20261106.png | /brand/final/experience-oil.webp |
+| AX관광_마을체험_화장수_20261106.png | /brand/final/experience-mist.webp |
+| 굿즈/AX관광_기본굿즈_여섯종로고자연스럽게적용_20261103.png | /brand/final/goods-collection.webp |
+| 굿즈/AX관광_동백오일패키지_로고자연스럽게적용_20261103.png | /brand/final/goods-oil.webp |
+| 굿즈/AX관광_아로마링_핑크로고와한방울사용법_20261103.png | /brand/final/goods-ring.webp |
+| 굿즈/AX관광_A20콜라보_반지디자인_진진솔.png | /brand/final/ring-design.webp |
+| 영상/AX관광_A20콜라보_숏폼1.1_진진솔.png | /brand/final/short-1-poster.webp |
+| 영상/AX관광_A20콜라보_숏폼2.1_진진솔.png | /brand/final/short-2-poster.webp |
+| 카드뉴스/AX관광_카드뉴스01_배경유지텍스트여백_20261103.png | /brand/final/card-01.webp |
+| 카드뉴스/AX관광_카드뉴스02_배경유지텍스트여백_20261103.png | /brand/final/card-02.webp |
+| 카드뉴스/AX관광_카드뉴스03_배경유지텍스트여백_20261103.png | /brand/final/card-03.webp |
+| 카드뉴스/AX관광_카드뉴스04_배경유지텍스트여백_20261103.png | /brand/final/card-04.webp |
+| 카드뉴스/AX관광_카드뉴스05_배경유지텍스트여백_20261103.png | /brand/final/card-05.webp |
+| 카드뉴스/AX관광_카드뉴스06_배경유지텍스트여백_20261103.png | /brand/final/card-06.webp |
+
+- 최종 블랙 로고를 헤더·푸터 공용 `/brand/bloom-logo.png`에 반영했다.
+- 숏폼 영상 1·2를 `/brand/final/short-1.mp4`, `/brand/final/short-2.mp4`로 준비하고 기본 재생 컨트롤과 직접 열기 링크를 연결했다.
+- `Creating_forest_video_animation_07ff0c30.mp4`는 기존 대표 영상과 SHA-256이 일치하여 중복 복사하지 않았다.
+- 카드뉴스 6장과 제품 화보는 전체 이미지를 볼 수 있고, 클릭 시 새 탭에서 크게 열린다.
+- 포스터·카드뉴스·제품 시안 속 과거 날짜, 증정, 제품 구분은 확정 운영 조건으로 채택하지 않았다. 전체 8종 콜라보 굿즈 구성과 미확정 방문 안내를 유지한다.
+- 디자인 가이드·브랜드 브리프·프롬프트북·무드보드·모델 가이드·그래픽 도형·수정 전 원본·바로 가기는 제작 참고자료로 보관하며 홈페이지 공개 콘텐츠로 싣지 않았다. 숏폼 장면 PNG 중 각 영상의 표지 1장씩을 사용했다.
+- 앞선 단계의 미제공 기록은 당시 상태이며, 이번 반영으로 체험 이미지·숏폼·카드뉴스가 준비된 상태로 변경됐다. 실제 운영 주소·시간·문의처·예약 조건은 여전히 미확정이다.

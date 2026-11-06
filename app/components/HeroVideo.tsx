@@ -28,7 +28,7 @@ export default function HeroVideo() {
       <video
         ref={videoRef} id="brand-film" className={styles.video}
         controls autoPlay muted loop playsInline preload="metadata"
-        poster="/brand/village.jpg" width={1536} height={864}
+        poster="/brand/final/key-visual.webp" width={1536} height={864}
         aria-label="bLOOM 동백마을 대표 영상"
         onPlay={() => { setPlaying(true); setMessage(""); }}
         onPause={() => setPlaying(false)}
